@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: upgrade_to_8_development
+
+test:
+  <<: *default
+  database: upgrade_to_8_test
+
+production:
+  <<: *default
+  database: upgrade_to_8_production
+  # Use variáveis de ambiente para a configuração de produção
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
