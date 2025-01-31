@@ -1,0 +1,5 @@
+hard_worker_job:
+  # every: "10s" # every 10 seconds
+  cron: "*/1 * * * *"
+  class: "HardWorkerJob"
+  active_job: true
