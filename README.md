@@ -38,7 +38,6 @@ docker compose -f docker-compose.development.yml up
 docker compose -f docker-compose.development.yml down
 docker compose -f docker-compose.development.yml run app bash
 docker compose -f docker-compose.development.yml run app rails active_storage:install
-docker compose -f docker-compose.development.yml run app rails action_text:install
 ```
 
 ## Migrations
@@ -135,6 +134,28 @@ If you are using tailwind, maybe you should change the `Procfile.dev` to listen 
 ```Provfile.dev
 web: bin/rails server -b 0.0.0.0
 css: bin/rails tailwindcss:watch
+```
+
+## Production
+
+Look for the instance ip and:
+
+```bash
+ssh ubuntu@... -i file.pem
+```
+
+Using docker
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+docker build -t app .
+docker volume create upgrade_rails_8
+docker run --rm -it \
+  -e RAILS_MASTER_KEY="master_key_here" \
+  -v upgrade_rails_8:/app/storage \
+  -p 3000:3000 \
+  app
 ```
 
 ## Git Flow

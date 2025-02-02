@@ -29,8 +29,8 @@ USER appuser
 
 WORKDIR /app
 COPY Gemfile* ./
-RUN gem install bundler --no-doc
 RUN bundle lock --add-platform x86_64-linux
+RUN gem install bundler --no-doc
 RUN bundle install
 RUN gem install foreman --no-doc
 COPY . /app

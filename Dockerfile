@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
   libmagickwand-dev \
   libsqlite3-dev \
   libpq-dev \
+  redis-server \
   git \
   sudo
 
