@@ -56,21 +56,11 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rspec-rails"
   gem "guard-rspec", require: false
-
-  gem "sidekiq", require: false
-  gem "sidekiq-cron"
 end
 
-group :rubocop do
-  gem "rubocop", ">= 1.25.1", require: false
-  gem "rubocop-packaging", require: false
-  gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-md", require: false
-  gem "rubocop-factory_bot"
-  gem "rubocop-rails-omakase", require: false
-  gem "rubocop-rspec"
-end
+gem "rubocop", ">= 1.25.1", require: false
+gem "rubocop-rails-omakase", require: false
+gem "rubocop-rails", require: false
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -93,3 +83,5 @@ gem "rack-cors"
 gem "actiontext"
 gem "dotenv"
 gem "dotenv-rails"
+gem "sidekiq", require: false
+gem "sidekiq-cron"
