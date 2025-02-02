@@ -17,9 +17,10 @@ test:
   database: upgrade_to_8_test
 
 production:
-  <<: *default
-  database: upgrade_to_8_production
-  # Use variáveis de ambiente para a configuração de produção
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  database: <%= ENV["DB_NAME"] %>
