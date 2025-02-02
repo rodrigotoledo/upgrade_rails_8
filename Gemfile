@@ -85,7 +85,7 @@ group :test do
 end
 
 group :lint do
-  gem "syntax_tree", "6.1.1", require: false
+  gem "syntax_tree", "6.2.0", require: false
 end
 
 gem "rack-cache", "~> 1.2"
