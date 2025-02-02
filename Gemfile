@@ -42,7 +42,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "pry"
   gem "dotenv-rails"
-  gem "dotenv"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
@@ -93,3 +92,4 @@ end
 gem "rack-cache", "~> 1.2"
 gem "rack-cors"
 gem "actiontext"
+gem "dotenv"

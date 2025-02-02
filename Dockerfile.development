@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
   libpq-dev \
   git \
   sudo
-rm -rf /var/lib/apt/lists /var/cache/apt/archives
+RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 RUN groupadd -g ${GROUP_ID} appuser && useradd -u ${USER_ID} -g ${GROUP_ID} -m appuser
 
