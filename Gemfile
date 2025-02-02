@@ -92,4 +92,4 @@ end
 
 gem "rack-cache", "~> 1.2"
 gem "rack-cors"
-gem 'actiontext'
+gem "actiontext"
