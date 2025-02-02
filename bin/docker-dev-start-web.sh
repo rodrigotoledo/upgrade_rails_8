@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -xeuo pipefail
-./bin/wait-for-tcp.sh redis 6379
 
 if [[ -f ./tmp/pids/server.pid ]]; then
   rm ./tmp/pids/server.pid
