@@ -38,6 +38,7 @@ FROM base AS build
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
+RUN bundle lock --add-platform x86_64-linux
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
