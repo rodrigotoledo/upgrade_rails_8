@@ -29,10 +29,10 @@ USER appuser
 
 WORKDIR /app
 COPY Gemfile* ./
+RUN gem install bundler
 RUN bundle lock --add-platform x86_64-linux
-RUN gem install bundler --no-doc
 RUN bundle install
-RUN gem install foreman --no-doc
+RUN gem install foreman
 COPY . /app
 RUN sudo rm -rf tmp/*
 ADD . /app
