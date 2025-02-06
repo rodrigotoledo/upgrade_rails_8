@@ -53,9 +53,10 @@ docker compose -f docker-compose.development.yml run app rails db:drop db:create
 Example Of Interaction Between Computer And Container:
 
 ```bash
+docker compose -f docker-compose.development.yml run app bundle exec sidekiq
+docker compose -f docker-compose.development.yml run app rails c
 docker compose -f docker-compose.development.yml run app rails g scaffold post title
 docker compose -f docker-compose.development.yml run app rails g scaffold comment post:references comment:text
-docker compose -f docker-compose.development.yml run app rails c
 ```
 
 ## Testing with Docker
