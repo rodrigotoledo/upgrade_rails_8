@@ -347,7 +347,7 @@ GEM
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
-    rufo (0.18.0)
+    rufo (0.18.1)
     securerandom (0.4.1)
     shellany (0.0.1)
     shoulda-matchers (6.4.0)
